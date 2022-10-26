@@ -49,8 +49,15 @@ var customerData = {
 
 function greetCustomer(firstName) {
   var greeting = '';
-  // your code here
-
+  if (firstName in customerData === true) {
+    var numVisits = Object.values(customerData[firstName])[0];
+    if (numVisits === 1) {
+      return (`Welcome back, ${firstName}! We're glad you liked us the first time!`);
+    } else if (numVisits > 1) {
+      return (`Welcome back, ${firstName}! So glad to see you again!`);
+    };
+  } else {
+    return ('Welcome! Is this your first time?');
+  };
   return greeting;
-}
-
+};

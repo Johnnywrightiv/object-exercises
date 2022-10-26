@@ -26,5 +26,14 @@ function getAllKeys(obj) {
 */
 
 function getAllKeys(obj){
-  // your code here
+  returnArr = [];
+
+  for (const key in obj) {
+    if (Object.hasOwnProperty.call(obj, key)) {
+      const element = obj[key];
+      // console.log(key)
+      returnArr.push(key);
+    }
+  }
+  return returnArr;
 }
